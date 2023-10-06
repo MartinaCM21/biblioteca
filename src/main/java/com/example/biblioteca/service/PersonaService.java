@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PersonaService implements BaseService<Persona>{
+public class PersonaService implements BaseService<Persona, Long>{
     public PersonaService(PersonaRepository personaRepository){
         this.personaRepository = personaRepository;
     }

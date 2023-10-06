@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AutorService implements BaseService<Autor>{
+public class AutorService implements BaseService<Autor, Long>{
 
     private AutorRepository autorRepository;
     public AutorService(AutorRepository autorRepository){

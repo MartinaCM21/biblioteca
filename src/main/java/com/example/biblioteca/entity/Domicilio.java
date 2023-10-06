@@ -1,10 +1,8 @@
 package com.example.biblioteca.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
-
-import java.io.Serializable;
-import java.util.Optional;
 
 @Entity
 @Table ( name = "persona")
@@ -13,11 +11,9 @@ import java.util.Optional;
 @Getter
 @Setter
 @Data
-public class Domicilio implements Serializable {
+@Builder
+public class Domicilio extends Base {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idDomicilio;
 
     @Column ( name = "calle")
     private String calle;

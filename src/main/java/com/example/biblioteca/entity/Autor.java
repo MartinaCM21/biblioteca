@@ -12,11 +12,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Data
-public class Autor implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idAutor;
+@Builder
+public class Autor extends Base {
 
     @Column( name = "nombre")
     private String nombre;

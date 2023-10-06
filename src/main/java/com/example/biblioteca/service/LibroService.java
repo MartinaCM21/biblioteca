@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class LibroService implements BaseService<Libro> {
+public class LibroService implements BaseService<Libro, Long> {
     private LibroRepository libroRepository;
     public LibroService(LibroRepository libroRepository){
         this.libroRepository = libroRepository;

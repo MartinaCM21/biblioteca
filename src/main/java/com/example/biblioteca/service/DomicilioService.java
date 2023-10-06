@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DomicilioService implements BaseService<Domicilio> {
+public class DomicilioService implements BaseService<Domicilio, Long> {
 
     private DomicilioRepository domicilioRepository;
     public DomicilioService(DomicilioRepository domicilioRepository){

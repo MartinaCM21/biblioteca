@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class LocalidadService implements BaseService<Localidad> {
+public class LocalidadService implements BaseService<Localidad, Long> {
     private LocalidadRepository localidadRepository;
 
     public LocalidadService(LocalidadRepository localidadRepository){

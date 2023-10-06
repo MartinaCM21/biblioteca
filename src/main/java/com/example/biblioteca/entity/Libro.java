@@ -15,11 +15,9 @@ import java.util.List;
 @Getter
 @Setter
 @Data
-public class Libro implements Serializable {
+@Builder
+public class Libro extends Base {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idLibro;
 
     @Column ( name = "titulo")
     private String titulo;
