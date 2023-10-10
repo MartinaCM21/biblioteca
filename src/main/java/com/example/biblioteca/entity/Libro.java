@@ -3,7 +3,6 @@ package com.example.biblioteca.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +15,7 @@ import java.util.List;
 @Setter
 @Data
 @Builder
+@EqualsAndHashCode(callSuper=false)
 public class Libro extends Base {
 
 
@@ -32,6 +32,7 @@ public class Libro extends Base {
     private int paginas;
 
     @ManyToMany(cascade = CascadeType.REFRESH)
+    @Builder.Default
     private List<Autor> autor = new ArrayList<Autor>();
 
 }

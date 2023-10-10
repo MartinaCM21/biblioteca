@@ -3,7 +3,6 @@ package com.example.biblioteca.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import java.util.List;
 @Setter
 @Data
 @Builder
+@EqualsAndHashCode(callSuper=false)
 public class Persona extends Base {
 
 
@@ -37,5 +37,6 @@ public class Persona extends Base {
             joinColumns = @JoinColumn( name = "persona_id"),
             inverseJoinColumns = @JoinColumn(name = "libro_id")
     )
+    @Builder.Default
     private List<Libro> libros = new ArrayList<Libro>();
 }
