@@ -1,56 +1,70 @@
 {
-    "info": {
-        "_postman_id": "40cffd64-ef39-421d-978e-6f260dfca981",
-        "name": "ApiReq",
-        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-        "_exporter_id": "29985119"
-    },
-    "item": [
-        {
-            "name": "personaRequest",
-            "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                    "raw": "http://localhost:8080/api/v1/personas/1",
-                    "protocol": "https",
-                    "path": ["1"]
-                }
-            },
-            "response": [
-                {
-                    "id": 1,
-                    "nombre": "Taylor",
-                    "apellido": "Swift",
-                    "dni": 42376457,
-                    "domicilio": {
-                        "id": 1,
-                        "calle": "Palma",
-                        "numero": 45,
-                        "localidad": {
-                            "id": 1,
-                            "denominacion": "Maipu"
-                        }
-                    },
-                    "libros": [
-                        {
-                            "id": 1,
-                            "titulo": "The Hunger Games",
-                            "genero": "Ficción",
-                            "paginas": 230,
-                            "fecha": "Fecha_de_publicación",
-                            "autor": [
-                                {
-                                    "id": 1,
-                                    "nombre": "Suzanne",
-                                    "apellido": "Collins",
-                                    "biografia": "Nació en 1984, vive en Argentina."
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+	"info": {
+		"_postman_id": "40cffd64-ef39-421d-978e-6f260dfca981",
+		"name": "ApiReq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29985119"
+	},
+	"item": [
+		{
+			"name": "autor",
+			"item": [
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"taylor\",\r\n    \"apellido\": \"swift\",\r\n    \"biografia\": \"canta country\"\r\n}"
+						},
+						"url": "http://localhost:8080/api/v1/autores"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"harry\",\r\n    \"apellido\": \"styles\",\r\n    \"biografia\": \"nacio en arg\"\r\n}"
+						},
+						"url": "http://localhost:8080/api/v1/autores/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/autores/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
 }
